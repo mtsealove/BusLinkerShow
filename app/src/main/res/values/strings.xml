@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BusLinker</string>
+    <string name="title_activity_search_route">SearchRouteActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="kakao_app_key">8688872ac8dac8d61a4ad094f8b29140</string>
+    <string name="facebook_app_key">569480083537181</string>
+    <string name="facebook_app_id">459428814607593</string>
+    <string name="fb_login_protocol_scheme">fb459428814607593</string>
+
+</resources>

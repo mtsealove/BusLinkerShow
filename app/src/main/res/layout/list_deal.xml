@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    android:layout_marginBottom="10dp"
+                                    android:id="@+id/cardview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:orientation="vertical">
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/paydateTV"
+                  android:text="배송일자: "
+                  android:textColor="@color/black"
+                  android:layout_marginHorizontal="10dp"
+                  android:layout_marginVertical="5dp"
+                  android:textSize="16sp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/startTmnTV"
+                  android:text="출발:"
+                  android:textColor="@color/black"
+                  android:layout_marginHorizontal="10dp"
+
+                  android:textSize="16sp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                  android:id="@+id/endTmnTV"
+                  android:text="도착:"
+                  android:textColor="@color/black"
+                  android:layout_marginHorizontal="10dp"
+                  android:textSize="16sp" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:layout_marginTop="5sp"
+                  android:id="@+id/divTimeTV"
+                  android:text="배송시간:"
+                  android:textColor="@color/black"
+                  android:layout_marginHorizontal="10dp"
+                  android:textSize="16sp" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/statusTV"
+                  android:text="상태"
+                  android:textColor="@color/colorAccent"
+                  android:layout_marginHorizontal="10dp"
+                  android:layout_marginVertical="5dp"
+                  android:textSize="16sp" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

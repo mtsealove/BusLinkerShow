@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:id="@+id/drawerLayout"
+                                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        xmlns:tools="http://schemas.android.com/tools"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/white"
+                                        tools:context=".MainActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+    >
+
+        <!--타이틀-->
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <Button
+                    android:id="@+id/panelBtn"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/panel"/>
+
+            <LinearLayout
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/bus_linker_icon"/>
+
+                <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:textColor="@color/black"
+                        android:text="@string/app_name"/>
+            </LinearLayout>
+
+            <View
+                    android:layout_below="@id/panelBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:background="@color/gray"/>
+        </RelativeLayout>
+
+        <!--정보가 많아 스크롤 적용-->
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <!--출발 시간 선택-->
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/setStartTimeTV"
+                          android:clickable="true"
+                          android:background="@drawable/set_terminal"
+                          android:text="출발시간 선택"
+                          android:textSize="20sp"
+                          android:padding="10dp"
+                          android:textColor="@color/black"
+                          android:layout_marginTop="10dp"
+                          android:layout_marginHorizontal="10dp"
+                />
+
+                <!--출발 터미널-->
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="출발지"
+                        android:textSize="25sp"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"/>
+                <TextView
+                        android:clickable="true"
+                        android:id="@+id/depTmnNmTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/set_terminal"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="10dp"
+                        android:text="출발 터미널"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"/>
+
+                <!--보내는 사람-->
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="이름"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"/>
+
+                    <EditText
+                            android:clickable="true"
+                            android:id="@+id/depPersonNameET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/background_input"
+                            android:inputType="textPersonName"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="연락처"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"/>
+
+                    <EditText
+                            android:clickable="true"
+                            android:id="@+id/depPersonContactET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/background_input"
+                            android:inputType="phone"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"/>
+                </LinearLayout>
+
+                <!--도착 터미널-->
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="도착지"
+                        android:textSize="25sp"
+                        android:textColor="@color/black"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"/>
+
+
+                <!--추가로 배송지로 선택될 레이아웃-->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/arrLayout"
+                              android:orientation="vertical">
+
+                </LinearLayout>
+
+                <!--도착지 추가 버튼-->
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:id="@+id/addBtn"
+                        android:background="@drawable/add_btn"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:text="도착지 추가"/>
+
+                <!--배송정보-->
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/set_terminal_normal">
+
+                    <TextView
+                            android:id="@+id/deliveryInfoTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:text="배송정보"
+                            android:textColor="@color/gray_text"
+                            android:textSize="20sp"/>
+
+                    <TextView
+                            android:id="@+id/deliveryTimeTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/deliveryInfoTV"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"/>
+
+
+                </RelativeLayout>
+
+                <!--화물정보-->
+                <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/set_terminal_normal" android:id="@+id/setDemensionLayout">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textColor="@color/gray_text"
+                            android:text="화물정보"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="20dp"/>
+
+                    <TextView
+                            android:id="@+id/freightInfoTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="화물정보 입력"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"/>
+                </LinearLayout>
+
+                <!--메시지 입력-->
+                <View
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray"/>
+
+                <TextView
+                        android:background="@drawable/background_list"
+                        android:clickable="true"
+                        android:id="@+id/inputMSGTV"
+                        android:paddingLeft="30dp"
+                        android:paddingVertical="10dp"
+                        android:text="메시지 입력"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                <TextView
+                        android:visibility="gone"
+                        android:id="@+id/showMsgTV"
+                        android:textColor="@color/black"
+                        android:paddingVertical="10dp"
+                        android:paddingHorizontal="20dp"
+                        android:layout_margin="10dp"
+                        android:text="메시지"
+                        android:textSize="20sp"
+                        android:background="@drawable/background_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray"/>
+                <!--요금확인 및 결제수단 선택-->
+
+                <RelativeLayout
+                        android:id="@+id/checkPayLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_list"
+                        android:clickable="true">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="30dp"
+                            android:layout_marginVertical="10dp"
+                            android:text="요금확인 및 결제수단 선택"
+                            android:textColor="@color/black"
+                            android:textSize="22sp"/>
+
+                    <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/move"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <inha.ac.kr.pdychoo.buslinker.Views.SlideMenu
+            android:id="@+id/slideMenu"
+            android:layout_gravity="start"
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+
+    </inha.ac.kr.pdychoo.buslinker.Views.SlideMenu>
+
+</android.support.v4.widget.DrawerLayout>

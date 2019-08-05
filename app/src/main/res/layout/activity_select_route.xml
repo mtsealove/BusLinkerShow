@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        xmlns:tools="http://schemas.android.com/tools"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/white"
+                                        tools:context=".SelectRouteActivity">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <!--타이틀-->
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <Button
+                    android:id="@+id/panelBtn"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/panel"/>
+
+            <LinearLayout
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/bus_linker_icon"/>
+
+                <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:textColor="@color/black"
+                        android:text="@string/app_name"/>
+            </LinearLayout>
+
+            <View
+                    android:layout_below="@id/panelBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:background="@color/gray"/>
+        </RelativeLayout>
+
+        <!--고속인지 시외인지 표시-->
+        <LinearLayout
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/expressTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="고속버스"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+            <TextView
+                    android:id="@+id/intercityTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/light_gray"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="시외버스"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <!--출발/도착 정보 표시-->
+        <RelativeLayout
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/stIcon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_border"
+                    android:gravity="center"
+                    android:text="출발"
+                    android:textSize="16sp"/>
+
+            <TextView
+                    android:id="@+id/depTmnNmTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@id/stIcon"
+                    android:gravity="center"
+                    android:text="출발터미널"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+            <View
+                    android:id="@+id/stick"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_below="@id/stIcon"
+                    android:layout_width="2dp"
+                    android:layout_height="16dp"
+                    android:background="@color/colorPrimary"/>
+
+            <TextView
+                    android:id="@+id/dtIcon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/stick"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/circle_border"
+                    android:gravity="center"
+                    android:text="도착"
+                    android:textSize="16sp"/>
+
+            <TextView
+                    android:id="@+id/arrTmnNmTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="71dp"
+                    android:layout_toRightOf="@id/dtIcon"
+                    android:gravity="center"
+                    android:text="도착터미널"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+        </RelativeLayout>
+
+        <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"/>
+
+        <!--날짜 선택 란-->
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <!--날짜 표시-->
+            <TextView
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/dateTV"
+                    android:text="2019.5.1 수요일"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"/>
+
+        <LinearLayout
+                android:layout_marginVertical="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+            <TextView
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="출발"/>
+
+            <TextView
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="도착"/>
+
+        </LinearLayout>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:src="@drawable/dashline"
+                android:layerType="software"/>
+
+        <ListView
+                android:visibility="gone"
+                android:id="@+id/dispatchList"
+                android:divider="@drawable/dashline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dividerHeight="1.5dp"
+                android:layerType="software"/>
+
+        <LinearLayout
+                android:id="@+id/delayLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <TextView
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:layout_marginTop="20dp"
+                    android:text="결과를 검색중입니다"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <ProgressBar
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                      android:orientation="vertical" android:visibility="gone"
+                      android:id="@+id/noResultLayout"
+                      android:gravity="center">
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="검색 결과가 존재하지 않습니다"
+                      android:textColor="@color/black"
+                      android:textSize="25sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <inha.ac.kr.pdychoo.buslinker.Views.SlideMenu
+            android:id="@+id/slideMenu"
+            android:layout_gravity="start"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"></inha.ac.kr.pdychoo.buslinker.Views.SlideMenu>
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+        <TextView
+                android:clickable="true"
+                android:id="@+id/arrTmnNmTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/set_terminal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="도착 터미널"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="이름"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+        <EditText
+                android:id="@+id/arrPersonNameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/background_input"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="연락처"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+        <EditText
+                android:id="@+id/arrPersonContactET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/background_input"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+    </LinearLayout>
+
+    <Button android:layout_width="wrap_content" android:layout_height="30dp"
+            android:id="@+id/referenceContactBtn"
+            android:background="@drawable/add_btn"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:text="연락처"
+            android:textSize="16sp"
+            android:textColor="@color/white"></Button>
+</LinearLayout>

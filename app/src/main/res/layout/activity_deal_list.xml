@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:id="@+id/drawerLayout"
+                                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        xmlns:tools="http://schemas.android.com/tools"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <!--타이틀-->
+        <RelativeLayout
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <Button
+                    android:id="@+id/panelBtn"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/panel"/>
+
+            <LinearLayout
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/bus_linker_icon"/>
+
+                <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:textColor="@color/black"
+                        android:text="@string/app_name"/>
+            </LinearLayout>
+
+            <View
+                    android:layout_below="@id/panelBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:background="@color/gray"/>
+        </RelativeLayout>
+
+        <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginVertical="15dp"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="거래내역 조회"/>
+
+        <ListView
+                android:visibility="gone"
+                android:dividerHeight="1.5dp"
+                android:layerType="software"
+                android:divider="@drawable/dashline"
+                android:id="@+id/dealList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/set_terminal_normal"></ListView>
+        <android.support.v7.widget.RecyclerView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                android:layout_marginHorizontal="20dp"
+                                                android:id="@+id/recyclerView"/>
+
+
+    </LinearLayout>
+
+    <inha.ac.kr.pdychoo.buslinker.Views.SlideMenu
+            android:layout_gravity="start"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"></inha.ac.kr.pdychoo.buslinker.Views.SlideMenu>
+
+</android.support.v4.widget.DrawerLayout>

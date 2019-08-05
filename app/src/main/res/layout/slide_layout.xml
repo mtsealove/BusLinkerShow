@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/white">
+
+    <!--타이틀 레이아웃-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+                android:layout_margin="20dp"
+                android:id="@+id/closeBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/icon_x"/>
+        <ImageView
+            android:id="@+id/appIcon"
+            android:layout_marginTop="30dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/bus_linker_icon"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:layout_below="@id/appIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+    <!--사용자 정보 표시 레이아웃-->
+    <LinearLayout
+        android:id="@+id/myAccountLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--이름 밑 거래-->
+        <RelativeLayout
+            android:background="@drawable/border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:background="@drawable/round_rectangle"
+                android:id="@+id/myAccountIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/member_icon" />
+
+            <TextView
+                android:layout_marginTop="-48dp"
+                android:layout_below="@id/myAccountIcon"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:text="신국화"
+                android:layout_toRightOf="@id/myAccountIcon"
+                android:id="@+id/nameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/black"
+                android:layout_marginTop="-48dp"
+                android:layout_below="@id/myAccountIcon"
+                android:textSize="20sp"
+                android:text="님"
+                android:layout_toRightOf="@id/nameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_below="@id/myAccountIcon"
+                android:id="@+id/dashline"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@drawable/dashline"
+                android:layerType="software"/>
+
+            <TextView
+                android:id="@+id/recentDealTV"
+                android:layout_margin="10dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:text="최근거래: 1건"
+                android:textSize="16sp"
+                android:layout_below="@id/dashline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <TextView
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="나의 거래 현황"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/gray"
+                android:text="(최근"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text=" 3개월"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/gray"
+                android:text="기준)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <TextView
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:id="@+id/ReadyTV"
+                    android:text="배송준비중\n0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="1.5dp"
+                android:layout_height="50dp"
+                android:background="@color/gray" />
+
+            <TextView
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:id="@+id/progressTV"
+                    android:text="배송중\n0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="1.5dp"
+                android:layout_height="50dp"
+                android:background="@color/gray" />
+
+            <TextView
+                    android:id="@+id/completeTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="배송완료\n0"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--메뉴 표시 레이아웃-->
+    <LinearLayout
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/border">
+
+        <!--로그인-->
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/loginLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginVertical="12dp"
+                android:layout_marginHorizontal="20dp"
+                android:id="@+id/loginIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/login"/>
+
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/loginIcon"
+                android:text="로그인"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layerType="software"
+                android:layout_below="@id/loginIcon"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@drawable/dashline"/>
+        </RelativeLayout>
+
+        <!--거래조회-->
+        <RelativeLayout
+            android:id="@+id/inquireLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/inquireIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/inquire_deal" />
+
+            <TextView
+                android:id="@+id/inquireText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/inquireIcon"
+                android:text="거래조회"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layerType="software"
+                android:layout_below="@id/inquireIcon"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@drawable/dashline"/>
+        </RelativeLayout>
+
+        <!--회원정보-->
+        <RelativeLayout
+            android:id="@+id/memberLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/memberIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/member_icon" />
+
+            <TextView
+                android:id="@+id/memberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/memberIcon"
+                android:text="회원정보"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layerType="software"
+                android:layout_below="@id/memberIcon"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@drawable/dashline"/>
+        </RelativeLayout>
+
+        <!--공지사항-->
+        <RelativeLayout
+            android:id="@+id/noticeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/NoticeIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/public_notice" />
+
+            <TextView
+                android:id="@+id/NoticeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/NoticeIcon"
+                android:layerType="software"
+                android:text="공지사항"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layerType="software"
+                android:layout_below="@id/NoticeIcon"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@drawable/dashline"/>
+        </RelativeLayout>
+
+        <!--요금표 확인-->
+        <!--
+        <RelativeLayout
+            android:id="@+id/check_chargeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/CheckChargeIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/check_price" />
+
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/CheckChargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/CheckChargeIcon"
+                android:text="요금표 확인"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layerType="software"
+                android:layout_below="@id/CheckChargeIcon"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@drawable/dashline"/>
+        </RelativeLayout>
+        -->
+
+        <!--FAQ-->
+        <RelativeLayout
+            android:id="@+id/faqLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/FAQIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/faq" />
+
+            <TextView
+                android:id="@+id/FAQText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/FAQIcon"
+                android:text="FAQ"
+                android:textSize="17sp" />
+        </RelativeLayout>
+
+        <!--로그아웃-->
+        <RelativeLayout
+            android:id="@+id/logoutLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layerType="software"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@drawable/dashline" />
+
+            <ImageView
+                android:id="@+id/logoutIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/logout" />
+
+            <TextView
+                android:id="@+id/logoutText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/logoutIcon"
+                android:text="로그아웃"
+                android:textSize="17sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
+    </ScrollView>
+    <View
+        android:layout_alignParentRight="true"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/light_gray" />
+</RelativeLayout>
