@@ -54,13 +54,15 @@ public class LoginKeeper extends AppCompatActivity {
 
     //로그인 데이터 저장
     public void SetBusLinkerLogin(LoginData loginData) {
+        String password=loginData.getPassword();
+        password=";;"+password+";;";    //스페이스 기호를 저장하기 위해 사용
         try{
             BufferedWriter bw=new BufferedWriter(new FileWriter(BusLinkerFile));
             bw.write("true");
             bw.newLine();
             bw.write(loginData.getID());
             bw.newLine();;
-            bw.write(loginData.getPassword());
+            bw.write(password);
             bw.flush();
             bw.close();
         } catch (Exception e) {
@@ -77,6 +79,8 @@ public class LoginKeeper extends AppCompatActivity {
             else {
                 String ID=br.readLine();
                 String password=br.readLine();
+                password=password.replace(";;", "");
+                password+="\n";
                 return new LoginData(ID, password);
             }
 

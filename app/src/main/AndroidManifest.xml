@@ -22,6 +22,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".Account.DealActivity">
+        </activity>
         <activity android:name=".Account.DealListActivity">
         </activity>
         <activity android:name=".Network.SetIPActivity">

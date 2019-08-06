@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import inha.ac.kr.pdychoo.buslinker.Account.DealActivity;
 import inha.ac.kr.pdychoo.buslinker.R;
 
 import java.util.List;
@@ -67,8 +68,9 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         viewHolder.cardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent();
+                Intent intent=new Intent(context, DealActivity.class);
                 intent.putExtra("Deal", deal);
+                context.startActivity(intent);
             }
         });
     }

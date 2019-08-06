@@ -4,4 +4,6 @@
     </declare-styleable>
     <declare-styleable name="Arr">
     </declare-styleable>
+    <declare-styleable name="TitleView">
+    </declare-styleable>
 </resources>
