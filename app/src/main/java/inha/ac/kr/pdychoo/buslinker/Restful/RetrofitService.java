@@ -27,4 +27,12 @@ public interface RetrofitService {
     //전체 거래내역
     @GET("/DealList")
     Call<List<Deal>> GetDealList(@Query("userID") String userID);
+
+    //회원정보 모두
+    @GET("/User")
+    Call<User> GetUser(@Query("userID") String userID);
+
+    //계정정보 업데이트
+    @POST("/UpdateUser")
+    Call<PostResponse> UpdateUser(@Body UpdateData updateData);
 }

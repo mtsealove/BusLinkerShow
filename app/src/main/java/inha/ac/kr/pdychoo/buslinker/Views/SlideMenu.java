@@ -1,7 +1,6 @@
 package inha.ac.kr.pdychoo.buslinker.Views;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,19 +10,17 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Vibrator;
 import android.support.annotation.RequiresApi;
-import android.text.InputType;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
+import inha.ac.kr.pdychoo.buslinker.Account.AccountActivity;
 import inha.ac.kr.pdychoo.buslinker.Account.DealListActivity;
 import inha.ac.kr.pdychoo.buslinker.Account.LoginActivity;
 import inha.ac.kr.pdychoo.buslinker.Account.LoginKeeper;
-import inha.ac.kr.pdychoo.buslinker.Entity.CustomAlert;
 import inha.ac.kr.pdychoo.buslinker.Entity.Member;
 import inha.ac.kr.pdychoo.buslinker.MainActivity;
 import inha.ac.kr.pdychoo.buslinker.Network.SetIPActivity;
@@ -107,6 +104,12 @@ public class SlideMenu extends RelativeLayout {
         loginLayout.setVisibility(View.VISIBLE);
         logoutLayout.setVisibility(GONE);
         memberLayout.setVisibility(View.GONE);
+        memberLayout.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MyAccount();
+            }
+        });
         myAccountLayout.setVisibility(GONE);
 
         loginLayout.setOnClickListener(new OnClickListener() {  //로그인 버튼 눌렀을 때
@@ -303,6 +306,11 @@ public class SlideMenu extends RelativeLayout {
 
     private void DealLog() {
         Intent intent=new Intent(context, DealListActivity.class);
+        context.startActivity(intent);
+    }
+
+    private void MyAccount() {
+        Intent intent=new Intent(context, AccountActivity.class);
         context.startActivity(intent);
     }
 }

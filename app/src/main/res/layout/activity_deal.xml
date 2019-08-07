@@ -17,6 +17,7 @@
                                                       android:layout_height="wrap_content"/>
 
         <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:scrollbars="none"
                     android:layout_marginHorizontal="15dp">
             <LinearLayout
                     android:layout_width="match_parent"
@@ -35,15 +36,15 @@
                               android:padding="10dp"
                               android:background="@drawable/border">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="터미널"
                               android:textColor="@color/black" android:id="@+id/startTmnTV"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="이름"
                               android:textColor="@color/black" android:id="@+id/startNmTV"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="연락처"
                               android:textColor="@color/black" android:id="@+id/startContactTV"/>
                 </LinearLayout>
@@ -60,20 +61,20 @@
                               android:padding="10dp"
                               android:background="@drawable/border">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="터미널"
                               android:textColor="@color/black" android:id="@+id/endTmnTV"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="이름"
                               android:textColor="@color/black" android:id="@+id/endNmTV"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="연락처"
                               android:textColor="@color/black" android:id="@+id/endContactTV"/>
 
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="배송시간"
                               android:textColor="@color/black" android:id="@+id/divTimeTV"/>
                 </LinearLayout>
@@ -90,11 +91,11 @@
                               android:padding="10dp"
                               android:background="@drawable/border">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="가로 세로 높이"
                               android:textColor="@color/black" android:id="@+id/dimensionTV"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="무게"
                               android:textColor="@color/black" android:id="@+id/weightTV"/>
                 </LinearLayout>
@@ -111,26 +112,26 @@
                               android:padding="10dp"
                               android:background="@drawable/border">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="메세지"
                               android:textColor="@color/black" android:id="@+id/messageTV"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="금액"
                               android:textColor="@color/black" android:id="@+id/priceTV"/>
 
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="결제 방법"
                               android:textColor="@color/black" android:id="@+id/methodTV"/>
 
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="결제 시간"
                               android:textColor="@color/black" android:id="@+id/paydateTV"/>
 
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:textSize="20sp"
+                              android:textSize="18sp"
                               android:text="상태"
                               android:textColor="@color/black" android:id="@+id/statusTV"/>
                 </LinearLayout>
