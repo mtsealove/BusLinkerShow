@@ -22,6 +22,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".BoardActivity">
+        </activity>
         <activity android:name=".Account.AccountActivity">
         </activity>
         <activity android:name=".Account.DealActivity">

@@ -116,4 +116,17 @@ public class DealActivity extends AppCompatActivity {
         if (!drawerLayout.isDrawerOpen(Gravity.START))
             drawerLayout.openDrawer(Gravity.START);
     }
+    //닫기
+    public static void closeDrawer() {
+        if (drawerLayout.isDrawerOpen(Gravity.START))
+            drawerLayout.closeDrawer(Gravity.START);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(Gravity.START))
+            drawerLayout.closeDrawer(Gravity.START);
+        else
+            super.onBackPressed();
+    }
 }

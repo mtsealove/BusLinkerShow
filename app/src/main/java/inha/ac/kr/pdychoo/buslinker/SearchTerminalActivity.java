@@ -36,7 +36,6 @@ public class SearchTerminalActivity extends AppCompatActivity {
     ListView resultListView;
     ArrayList<String> tmnCd, tmnNm;
     private String terminalCode, terminalName, StartTime, arrTmnNm;
-    ArrayList<String> terminalNms, terminalCds;
     private int index;
 
     @Override

@@ -23,20 +23,17 @@
                 android:layout_height="wrap_content"
                 android:text="거래내역 조회"/>
 
-        <ListView
-                android:visibility="gone"
-                android:dividerHeight="1.5dp"
-                android:layerType="software"
-                android:divider="@drawable/dashline"
-                android:id="@+id/dealList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/set_terminal_normal"></ListView>
         <android.support.v7.widget.RecyclerView android:layout_width="match_parent" android:layout_height="wrap_content"
                                                 android:layout_marginHorizontal="20dp"
                                                 android:id="@+id/recyclerView"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/noDealTV"
+                  android:visibility="gone"
+                  android:layout_marginHorizontal="20dp"
+                  android:textSize="20sp"
+                  android:textColor="@color/black"
+                  android:text="거래내역이 존재하지 않습니다" />
 
 
     </LinearLayout>

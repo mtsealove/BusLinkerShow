@@ -1,5 +1,6 @@
 package inha.ac.kr.pdychoo.buslinker.Views;
 
+import android.accounts.Account;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,10 +18,8 @@ import android.view.View;
 import android.widget.*;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
-import inha.ac.kr.pdychoo.buslinker.Account.AccountActivity;
-import inha.ac.kr.pdychoo.buslinker.Account.DealListActivity;
-import inha.ac.kr.pdychoo.buslinker.Account.LoginActivity;
-import inha.ac.kr.pdychoo.buslinker.Account.LoginKeeper;
+import inha.ac.kr.pdychoo.buslinker.Account.*;
+import inha.ac.kr.pdychoo.buslinker.BoardActivity;
 import inha.ac.kr.pdychoo.buslinker.Entity.Member;
 import inha.ac.kr.pdychoo.buslinker.MainActivity;
 import inha.ac.kr.pdychoo.buslinker.Network.SetIPActivity;
@@ -124,12 +123,6 @@ public class SlideMenu extends RelativeLayout {
                 Logout();
             }
         });
-        inquireDealLayout.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                InquireLog();
-            }
-        });
         checkLogin();
 
         closeBtn.setOnClickListener(CloseListener);
@@ -138,6 +131,18 @@ public class SlideMenu extends RelativeLayout {
             @Override
             public void onClick(View view) {
                 DealLog();
+            }
+        });
+        faqLayout.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FAQ();
+            }
+        });
+        publicNoticeLayout.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Notice();
             }
         });
     }
@@ -244,17 +249,11 @@ public class SlideMenu extends RelativeLayout {
         }
     }
 
-    private void InquireLog() { //거래내역 조회
-        /*
-        Intent intent = new Intent(getContext(), DealLogListActivity.class);
-        context.startActivity(intent);
-         */
-    }
 
     private OnClickListener CloseListener = new OnClickListener() {
         @Override
         public void onClick(View view) {
-            MainActivity.closeDrawer();
+            closeDrawer();
         }
     };
 
@@ -307,10 +306,49 @@ public class SlideMenu extends RelativeLayout {
     private void DealLog() {
         Intent intent=new Intent(context, DealListActivity.class);
         context.startActivity(intent);
+        closeDrawer();
     }
 
     private void MyAccount() {
         Intent intent=new Intent(context, AccountActivity.class);
         context.startActivity(intent);
+        closeDrawer();
+    }
+
+    private void Notice() {
+        Intent intent=new Intent(context, BoardActivity.class);
+        intent.putExtra("boardName", "notice");
+        context.startActivity(intent);
+        closeDrawer();
+    }
+
+    private void FAQ() {
+        Intent intent=new Intent(context, BoardActivity.class);
+        intent.putExtra("boardName", "FAQ");
+        context.startActivity(intent);
+        closeDrawer();
+    }
+
+    private void closeDrawer() {
+        String contextName = context.getClass().getSimpleName();
+
+        switch (contextName) {
+            case "MainActivity":
+                MainActivity.closeDrawer();
+                break;
+            case "AccountActivity":
+                AccountActivity.closeDrawer();
+                break;
+            case "DealActivity":
+                DealActivity.closeDrawer();
+                break;
+            case "DealListActivity":
+                DealListActivity.closeDrawer();
+                break;
+            case "BoardActivity":
+                BoardActivity.closeDrawer();
+                break;
+
+        }
     }
 }

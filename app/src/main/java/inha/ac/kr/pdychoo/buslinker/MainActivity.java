@@ -1,6 +1,7 @@
 package inha.ac.kr.pdychoo.buslinker;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     EditText depPersonNameET, depPersonContactET;
     TextView depTmnNmTV, timeTV, freightInfoTV, inputMsgTV, showMsgTV, StartTimeTV;
     SlideMenu slideMenu;
-    Button panelBtn, addBtn;
+    Button  addBtn;
     RelativeLayout checkPayLayout;
     LinearLayout arrLayout, setDemensionLayout;
     static android.support.v4.widget.DrawerLayout drawerLayout;
@@ -63,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         setDemensionLayout = findViewById(R.id.setDemensionLayout);
 
         slideMenu = findViewById(R.id.slideMenu);
-        panelBtn = findViewById(R.id.panelBtn);
         addBtn = findViewById(R.id.addBtn);
         drawerLayout = findViewById(R.id.drawerLayout);
         inputMsgTV = findViewById(R.id.inputMSGTV);
@@ -87,15 +87,6 @@ public class MainActivity extends AppCompatActivity {
                 setPayMethod();
             }
         }); //결제 방법 선택 다이얼로그 출력
-
-        //패널 버튼
-        panelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(Gravity.START);
-            }
-        });
-
         //메시지 입력
         inputMsgTV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -193,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.dialog_pay, null);
         TextView priceTV = view.findViewById(R.id.priceTV);
+        price=Math.abs(price);
         priceTV.setText(price + " 원");
 
         CheckBox reuseCB = view.findViewById(R.id.reuseCB);
@@ -441,6 +433,10 @@ public class MainActivity extends AppCompatActivity {
     public static void closeDrawer() {
         if (drawerLayout.isDrawerOpen(Gravity.START))
             drawerLayout.closeDrawer(Gravity.START);
+    }
+    public static void openDrawer(){
+        if(!drawerLayout.isDrawerOpen(Gravity.START))
+            drawerLayout.openDrawer(Gravity.START);
     }
 
     //뒤로 가기 2번 눌러 종료
