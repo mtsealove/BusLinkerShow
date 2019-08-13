@@ -146,7 +146,7 @@ public class LoadActivity extends AppCompatActivity {
         Log.e("로그인", loginKeeper.GetBusLinkerLogin().getPassword());
 
         OkHttpClient okHttpClient=new OkHttpClient.Builder()
-                .connectTimeout(1, TimeUnit.MINUTES)
+                .connectTimeout(30, TimeUnit.SECONDS)
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .build();

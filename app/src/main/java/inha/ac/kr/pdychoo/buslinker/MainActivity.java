@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         setDemensionLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setDemension();
+                setDimension();
             }
         });
 
@@ -206,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    private String divTime="";
     View.OnClickListener PayMethodClickListener = new View.OnClickListener() {    //결제 방법 선택 버튼 리스너
         @Override
         public void onClick(View view) {
@@ -222,12 +223,12 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("startNm", depPersonNameET.getText().toString());
                 intent.putExtra("startContact", depPersonContactET.getText().toString());
                 //도착정보 전송
-                String endTmn="", endNm="", endContact="", divTime="";
+                String endTmn="", endNm="", endContact="";
+                divTime=timeTV.getText().toString();
                 for(Arr arr: arrlist){  //유동적으로 도착정보의 개수 판단
                     endTmn+=arr.getArrTmnNm()+";;";
                     endNm+=arr.getName()+";;";
                     endContact+=arr.getContact()+";;";
-                    divTime+=arr.getStartTime()+";;";
                 }
                 intent.putExtra("endTmn", endTmn);
                 intent.putExtra("endNm", endNm);
@@ -322,7 +323,6 @@ public class MainActivity extends AppCompatActivity {
                     String arrTmnNm = data.getStringExtra("arrTmnNm");
                     Log.e("최종 결과", "터미널명: " + arrTmnNm + " 출발시간: " + depTime + " 도착시간: " + arrTime + " 번호: " + index);
 
-
                     arrlist.get(index).setTeminalTV(arrTmnNm);
                     String temp = timeTV.getText().toString();
                     if (temp.length() != 0) temp += "\n";
@@ -390,7 +390,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     // 화물정보 입력
-    private void setDemension() {
+    private void setDimension() {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.dialog_input_xyz, null);
         final EditText XET, YET, ZET, weightET;
